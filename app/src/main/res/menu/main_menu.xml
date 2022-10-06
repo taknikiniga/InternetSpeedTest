@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navHistory"
+        android:title="Test History"
+        android:icon="@drawable/ic_round_history_24"></item>
+
+    <item
+        android:id="@+id/navhome"
+        android:title="Speed Test"
+        android:icon="@drawable/ic_round_network_check_24"></item>
+
+</menu>

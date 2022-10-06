@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="historyData"
+            type="com.taknikiniga.internetspeedtest.fragments.history.model.InternetSpeedModel.InternetHistoryModel" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="@dimen/maxSize">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/minSize">
+
+
+            <TextView
+                android:id="@+id/icDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/idDownSpeed"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/idDownSpeed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@{historyData.download}"
+                app:layout_constraintBottom_toBottomOf="@+id/icDate"
+                app:layout_constraintEnd_toStartOf="@+id/icUploadSpeed"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/icDate"
+                app:layout_constraintTop_toTopOf="@+id/icDate" />
+
+            <TextView
+                android:id="@+id/icUploadSpeed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@{historyData.uploadSpeed}"
+                app:layout_constraintBottom_toBottomOf="@+id/idDownSpeed"
+                app:layout_constraintEnd_toStartOf="@+id/icPingSpeed"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/idDownSpeed"
+                app:layout_constraintTop_toTopOf="@+id/idDownSpeed" />
+
+            <TextView
+                android:id="@+id/icPingSpeed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/icUploadSpeed"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@{historyData.ping}"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/icUploadSpeed"
+                app:layout_constraintTop_toTopOf="@+id/icUploadSpeed" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

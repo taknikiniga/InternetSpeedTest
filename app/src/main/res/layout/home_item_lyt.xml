@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardPreventCornerOverlap="true"
+        app:cardCornerRadius="@dimen/maxSize"
+        app:cardUseCompatPadding="true">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/maxSize">
+
+
+            <ImageView
+                android:id="@+id/speedImg"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_download_" />
+
+            <TextView
+                android:id="@+id/speedLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Download"
+                app:layout_constraintEnd_toEndOf="@+id/speedImg"
+                app:layout_constraintStart_toStartOf="@+id/speedImg"
+                app:layout_constraintTop_toBottomOf="@+id/speedImg" />
+
+            <TextView
+                android:id="@+id/speedInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="65.0KB"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/speedLabel"
+                app:layout_constraintStart_toStartOf="@+id/speedLabel"
+                app:layout_constraintTop_toBottomOf="@+id/speedLabel" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

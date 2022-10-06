@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/navhome">
+
+    <fragment
+        android:id="@+id/navhome"
+        android:name="com.taknikiniga.internetspeedtest.fragments.home.Home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home_to_history"
+            app:destination="@id/navHistory" />
+    </fragment>
+    <fragment
+        android:id="@+id/navHistory"
+        android:name="com.taknikiniga.internetspeedtest.fragments.history.pages.History"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
+</navigation>
