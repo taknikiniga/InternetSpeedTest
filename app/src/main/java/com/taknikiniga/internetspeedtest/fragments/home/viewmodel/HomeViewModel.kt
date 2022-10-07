@@ -44,7 +44,7 @@ class HomeViewModel @Inject constructor(
     fun setDownloadSpeed(context: Context): Flow<View> = flow {
         val downloadLyt: HomeItemLytBinding =
             HomeItemLytBinding.inflate(LayoutInflater.from(context))
-        downloadLyt.speedInfo.text = "${getDownloadSpeed()}"
+        downloadLyt.speedInfo.text = "${getDownloadSpeed()} Mbps"
         emit(downloadLyt.root)
     }.flowOn(Dispatchers.Main)
 
@@ -54,7 +54,7 @@ class HomeViewModel @Inject constructor(
             HomeItemLytBinding.inflate(LayoutInflater.from(context))
         downloadLyt.speedLabel.text = "Upload"
         downloadLyt.speedImg.setImageResource(R.drawable.ic_baseline_cloud_upload_24)
-        downloadLyt.speedInfo.text = "${getUploadSpeed()}"
+        downloadLyt.speedInfo.text = "${getUploadSpeed()} Mbps"
         emit(downloadLyt.root)
     }.flowOn(Dispatchers.Main)
 
@@ -63,8 +63,8 @@ class HomeViewModel @Inject constructor(
         localDbDao.insertInternetHistory(
             internetHistoryModel = InternetHistoryModel(
                 Date(),
-                download = "${getDownloadSpeed()}",
-                uploadSpeed = "${getUploadSpeed()}",
+                download = "${getDownloadSpeed()}Mpbs",
+                uploadSpeed = "${getUploadSpeed()}Mbps",
                 ping = "no data"
             )
         )

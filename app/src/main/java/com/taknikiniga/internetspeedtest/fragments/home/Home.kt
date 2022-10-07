@@ -1,5 +1,6 @@
 package com.taknikiniga.internetspeedtest.fragments.home
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -13,6 +14,7 @@ import androidx.fragment.app.viewModels
 import com.taknikiniga.internetspeedtest.R
 import com.taknikiniga.internetspeedtest.databinding.FragmentHomeBinding
 import com.taknikiniga.internetspeedtest.fragments.home.viewmodel.HomeViewModel
+import com.taknikiniga.internetspeedtest.services.BoundService
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -57,6 +59,9 @@ class Home : Fragment() {
                 binding?.homeMain?.addView(it)
             }
         }
+
+
+
 
     }
 
